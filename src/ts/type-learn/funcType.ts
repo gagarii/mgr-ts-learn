@@ -5,9 +5,9 @@
  * 下記では、funcというfunction宣言した関数を
  * 関数型 (foo: string)=>number のfに代入している (という理解をした)
  */
-const f: (foo: string)=>number = func;
+const f: (foo: string)=>number = functionEx;
 
-function func(arg: string): number {
+function functionEx(arg: string): number {
     return Number(arg);
 }
 console.log('funcの動作確認: ' + f("1"));

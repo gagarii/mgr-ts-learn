@@ -1,6 +1,6 @@
 "use strict";
 // primitive data type
-const a = 1;
+const aPrimitive = 1;
 // Type 'number' is not assignable to type 'string'.
 // const b: string = a;
 const b = "1";

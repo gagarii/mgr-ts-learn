@@ -1,5 +1,5 @@
 // primitive data type
-const a: number = 1;
+const aPrimitive: number = 1;
 
 // Type 'number' is not assignable to type 'string'.
 // const b: string = a;
