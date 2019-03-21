@@ -56,3 +56,30 @@ function premitiveJudge(val) {
         return val; // stringでないならばnumber。
     }
 }
+/**
+ * unionを使うケースとして、nullableな値を扱いたい場合などがある
+ * 例えば、string型の値かnullの値が来るかわからないケースも
+ * unionならば string | null のように表すことができる
+ */
+function strLength(str) {
+    if (str != null) {
+        return str.length;
+    }
+    else {
+        return 0;
+    }
+}
+function tMap(obj, f) {
+    if (obj.type === 'Some') {
+        // ここではobjはSome<T>型
+        return {
+            type: 'Some',
+            val: f(obj.val)
+        };
+    }
+    else {
+        return {
+            type: 'None'
+        };
+    }
+}

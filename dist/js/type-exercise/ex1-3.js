@@ -6,7 +6,7 @@
  * 以下のコードに合うように適切な型IsPositiveFuncを定義してください。
  */
 // 問題は、これにあうIsPositiveFuncを定義する。
-const isPositive = num => num >= 0;
+const isPositive3 = num => num >= 0;
 // 正解
 // 引数名はなんでもおk。
 //type IsPositiveFunc = (arg: number) => boolean;

@@ -6,7 +6,7 @@
  */
 
 // 問題は、これにあうIsPositiveFuncを定義する。
-const isPositive: IsPositiveFunc = num => num >= 0;
+const isPositive3: IsPositiveFunc = num => num >= 0;
 
 // 回答
 // type構文を使って、引数numberを受け取ると、booleanを返す型の関数とする。

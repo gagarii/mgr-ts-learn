@@ -79,3 +79,45 @@ function premitiveJudge(val: string | number): number {
         return val; // stringでないならばnumber。
     }
 }
+
+/**
+ * unionを使うケースとして、nullableな値を扱いたい場合などがある
+ * 例えば、string型の値かnullの値が来るかわからないケースも
+ * unionならば string | null のように表すことができる
+ */
+function strLength(str: string | null): number {
+    if (str != null) {
+        return str.length;
+    } else {
+        return 0;
+    }
+}
+
+/**
+ * プリミティブ型だけでなく、オブジェクト型においてもunionを使いたい時
+ * リテラル型とunion型をうまく使えば代数的データ型
+ */
+interface Some<T> {
+    type: 'Some';
+    val: T;
+}
+interface None {
+    type: 'None';
+}
+type Option<T> = Some<T> | None;
+
+function tMap<T, U>(obj: Option<T>, f: (obj: T) => U): Option<U> {
+    if (obj.type === 'Some') {
+        // ここではobjはSome<T>型
+        return {
+            type: 'Some',
+            val: f(obj.val)
+        };
+    } else {
+        return {
+            type: 'None'
+        };
+    }
+}
+
+
